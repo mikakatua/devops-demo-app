@@ -1,6 +1,7 @@
 <?php
 // Load Config
 $config = parse_ini_file('config.ini');
+$environ = getenv('ENVVAR');
 
 // Declare Variables
 $dbSuccess = false;
@@ -73,7 +74,7 @@ $conn->close(); ?>
                     ?>
                     </span>
                 </h3>
-                <h3>Environment: <span class="label label-info"><?php echo $config['environment'] ?></span></h3>
+                <h3>Environment: <span class="label label-info"><?php echo $environ ?></span></h3>
                 <h3>Application Version: <span class="label label-info">1.7</span></h3>
                 <h3>Database Scripts Version: <?php
                         if ($dbVersion) {echo '<span class="label label-info">'. $dbVersion;}
