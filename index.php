@@ -1,7 +1,7 @@
 <?php
 // Load Config
-$config = parse_ini_file('config.ini');
 $environ = getenv('ENVVAR');
+$config = parse_ini_file("conf/{$environ}.ini");
 
 // Declare Variables
 $dbSuccess = false;
