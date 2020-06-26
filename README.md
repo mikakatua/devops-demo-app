@@ -40,7 +40,7 @@ git clone https://github.com/mikakatua/devops-demo-app.git
 cat devops-demo-app/data/* | oc exec -i $(oc get pod -l name=mariadb -o=jsonpath='{.items[0].metadata.name}') -- mysql -u root devopsdemo
 ```
 
-Storing database credentials in the repo is a very bad idea. One solution will be to create a configmap:
+Storing database credentials in the repo is a very bad idea. One solution would be to create a configmap:
 ```
 oc create cm my-config --from-file=devops-demo-app/conf
 
